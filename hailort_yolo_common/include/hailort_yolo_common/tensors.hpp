@@ -15,7 +15,7 @@ namespace common
 //-------------------------------
 template<typename T>
 xt::xarray<float> dequantize(
-  const xt::xarray<T> & input, const float & qp_scale,
+  const xt::xarray<uint8_t> & input, const float & qp_scale,
   const float & qp_zp)
 {
   // Rescale the input using the given scale and zero-point

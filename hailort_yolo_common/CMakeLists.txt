@@ -16,10 +16,15 @@ find_package(OpenCV REQUIRED)
 
 ament_auto_add_library(${PROJECT_NAME} SHARED
   src/yolo_hailortpp.cpp
+  src/detection_inference.cpp
 )
 target_link_libraries(${PROJECT_NAME} Threads::Threads HailoRT::libhailort ${OpenCV_LIBS} stdc++fs)
 target_include_directories(${PROJECT_NAME} PUBLIC include ${OpenCV_INCLUDE_DIRS})
 
+ament_auto_add_executable(yolo_tiny
+  example/yolox_tiny.cpp
+)
+target_link_libraries(yolo_tiny ${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

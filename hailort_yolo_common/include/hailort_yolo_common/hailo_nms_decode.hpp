@@ -114,7 +114,7 @@ public:
       }
 
       // calculate the frame size of the class - sums up the size of the output during iteration
-      T class_frame_size = static_cast<T>(sizeof(bbox_count) + bbox_count * sizeof(BBoxType));
+      T class_frame_size = static_cast<uint8_t>(sizeof(bbox_count) + bbox_count * sizeof(BBoxType));
       actual_frame_size += static_cast<uint32_t>(class_frame_size);
     }
 
