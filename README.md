@@ -5,7 +5,8 @@ YOLOX-ROS : https://github.com/Ar-Ray-code/YOLOX-ROS
 
 ## Requirements
 
-- HailoRT
+- HailoRT 4.17.0
+- ROS-Jazzy
 
 ## Usage
 
