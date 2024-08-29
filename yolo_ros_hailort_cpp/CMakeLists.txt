@@ -13,12 +13,17 @@ endif()
 
 find_package(ament_cmake_auto REQUIRED)
 ament_auto_find_build_dependencies()
-
+find_package(cv_bridge REQUIRED)
+find_package(vision_msgs REQUIRED)
 find_package(Threads)
 find_package(HailoRT REQUIRED)
 
 ament_auto_add_library(yolo_ros_hailort_cpp SHARED
   src/yolo_ros_hailort_cpp.cpp
+)
+ament_target_dependencies(yolo_ros_hailort_cpp
+    cv_bridge
+    vision_msgs
 )
 target_link_libraries(yolo_ros_hailort_cpp
     Threads::Threads
